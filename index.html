@@ -1,63 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Google Material Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
-  <title>Plataforma de blog escalável</title>
-</head>
-
-<body>
-  <header>
-	<div class="logo" tabindex="0" aria-label="Blog platform logo">Bishop BlogSphere</div>
-    <div id="auth-section" aria-live="polite"></div>
-  </header>
-
-  <main>
-    <section id="auth-form-container" aria-label="User authentication form">
-      <form id="auth-form" novalidate>
-        <h2 id="auth-form-title">Acesso</h2>
-        <label for="username-input">Nome</label>
-        <input type="text" id="username-input" name="username" autocomplete="username" required aria-required="true" />
-        <label for="password-input">Senha</label>
-        <input type="password" id="password-input" name="password" autocomplete="current-password" required aria-required="true" minlength="8" />
-        <button type="submit" id="auth-submit-btn">Acesso</button>
-        <div id="auth-switch" role="button" tabindex="0" aria-pressed="false" aria-label="Switch to register form">Não tem uma conta? Cadastre-se</div>
-        <p id="auth-message" role="alert" aria-live="assertive"></p>
-      </form>
-    </section>
-
-    <section id="app" class="hidden" aria-live="polite" aria-label="Blog platform main application">
-      <div id="blog-creation" role="region" aria-label="Create a new blog post">
-        <h2>Crie uma nova postagem</h2>
-        <input id="post-title" name="title" type="text" placeholder="Título da postagem (obrigatório)" aria-required="true" />
-        <textarea id="post-content" name="content" placeholder="Escreva o conteúdo da sua postagem..." aria-required="true" spellcheck="false"></textarea>
-        <div id="preview-header">Visualização</div>
-        <div id="preview-area" aria-live="polite"></div>
-		<br>
-		<button id="create-post-btn" aria-label="Create blog post">Publicar postagem</button>
-      </div>
-
-      <div id="search-bar" role="search" aria-label="Search blog posts">
-        <input id="search-input" type="search" placeholder="Pesquisar postagens por título ou conteúdo..." aria-label="Search posts" />
-        <button id="search-clear" aria-label="Clear search">&times;</button>
-      </div>
-
-      <section id="posts-list" aria-label="List of blog posts"></section>
-      <div id="no-posts-msg" class="hidden">Nenhuma postagem encontrada.</div>
-    </section>
-  </main>
-
-  <footer aria-label="Footer information">© 2025 Bishop BlogSphere — Plataforma de blog escalável</footer>
-
-  <!-- Marked.js CDN for Markdown parsing -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="app.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>Blog Bishop</title>
+		<link rel="stylesheet" href="styles.css" />
+		<!-- Google Fonts: Poppins -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<!-- Google Material Icons -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<div class="logo" tabindex="0" aria-label="Blog platform logo">Blog Bishop</div>
+			<div id="auth-section" aria-live="polite"></div>
+		</header>
+		
+		<main>
+			<section id="auth-form-container" aria-label="User authentication form">
+				<form id="auth-form" novalidate>
+					<h2 id="auth-form-title">Acesso</h2>
+					<label for="username-input">Nome</label>
+					<input type="text" id="username-input" name="username" autocomplete="username" required aria-required="true" aria-describedby="username-desc" />
+					
+					<label for="password-input">Senha</label>
+					<input type="password" id="password-input" name="password" autocomplete="current-password" required aria-required="true" minlength="8" />
+					
+					<button type="submit" id="auth-submit-btn">Acesso</button>
+					<div id="auth-switch" role="button" tabindex="0" aria-pressed="false" aria-label="Switch to register form">Não tem uma conta? Cadastre-se</div>
+					<p id="auth-message" role="alert" aria-live="assertive" style="color:#ef4444;min-height:20px; margin-top:8px;"></p>
+				</form>
+			</section>
+			
+			<section id="app" class="hidden" aria-live="polite" aria-label="Blog platform main application">
+				<div id="blog-creation" role="region" aria-label="Create a new blog post">
+					<h2>Criar uma nova postagem</h2>
+					<input id="post-title" name="title" type="text" placeholder="Título do Post (obrigatório)" aria-required="true" autocomplete="off" maxlength="120" />
+					<textarea id="post-content" name="content" placeholder="Escreva o conteúdo da sua postagem..." aria-required="true" spellcheck="false"></textarea>
+					<div id="preview-header">Visualização de Markdown</div>
+					<div id="preview-area" aria-live="polite"></div>
+					<br>
+					<button id="create-post-btn" aria-label="Create blog post">Publicar postagem</button>
+				</div>
+				
+				<div id="search-bar" role="search" aria-label="Search blog posts">
+					<input id="search-input" type="search" placeholder="Pesquisar postagens por título ou conteúdo..." aria-label="Search posts" />
+					<button id="search-clear" aria-label="Clear search">&times;</button>
+				</div>
+				
+				<section id="posts-list" aria-label="List of blog posts"></section>
+				<div id="no-posts-msg" class="hidden">Nenhuma postagem encontrada.</div>
+			</section>
+		</main>
+		
+		<footer aria-label="Footer information">
+			&copy; 2025 Blog Bishop — Sua plataforma de blog escalável - Powered by JavaScript, HTML & CSS
+		</footer>
+		
+		<!-- Marked.js CDN for Markdown parsing -->
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		<script src="app.js"></script>
+	</body>
 </html>
-
