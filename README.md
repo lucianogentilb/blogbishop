@@ -37,7 +37,7 @@ Esta plataforma de blog foi projetada para ser altamente escalável, permitindo 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/lucianogentilb/blogsphere.github.io/
+   git clone https://github.com/lucianogentilb/blogbishop/
 2. Navegue até o diretório do projeto.
 3. Abra o arquivo index.html no seu navegador.
 4. Se você estiver utilizando um backend, configure-o de acordo com as instruções do backend.
